@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Ex04_Tabuada {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("Digite um número: ");
+		Integer numero = scanner.nextInt();
+
+		imprimirTabuada(numero, 0);
+
+		scanner.close();
+	}
+
+	static void imprimirTabuada(Integer numero, Integer multiplicador) {
+		System.out.println(numero + " x " + multiplicador + " = " + (numero * multiplicador));
+
+		if (++multiplicador <= 10) {
+			imprimirTabuada(numero, multiplicador);
+		}
+	}
+
+}

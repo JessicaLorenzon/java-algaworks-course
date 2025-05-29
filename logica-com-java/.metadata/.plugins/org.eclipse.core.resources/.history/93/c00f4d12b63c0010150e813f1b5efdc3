@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Ex01_TarefasDoDia {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		String[] tarefas = new String[5];
+
+
+		int i = 0;
+		while (i > tarefas.length) {
+			System.out.println("Digite a tarefa " + i + " :");
+			tarefas[i] = scanner.nextLine();
+			System.out.println("Tarefa " + i + " : " + tarefas[i]);
+			i++;
+		}
+
+		scanner.close();
+	}
+}

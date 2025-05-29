@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Ex03_GastoMensal {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		Double gastoTotal = 0.0;
+
+		System.out.print("Digite o valor da conta de luz: R$");
+		gastoTotal += scanner.nextDouble();
+
+		System.out.print("Digite o valor da conta de água: R$");
+		gastoTotal += scanner.nextDouble();
+
+		System.out.print("Digite o valor da conta de telefone: R$");
+		gastoTotal += scanner.nextDouble();
+
+		System.out.print("Digite o valor da escola do filho: R$");
+		gastoTotal += scanner.nextDouble();
+
+		System.out.print("Digite o valor da fatura do cartão: R$");
+		gastoTotal += scanner.nextDouble();
+
+		System.out.print("Digite o valor dos gastos com supermercado: R$");
+		gastoTotal += scanner.nextDouble();
+
+		System.out.println("Gasto total: R$" + gastoTotal);
+
+		scanner.close();
+	}
+}

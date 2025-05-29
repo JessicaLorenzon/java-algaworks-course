@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Ex02_ValorFinal {
+
+	static final Double VALOR_FRETE = 15.00;
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Digite o valor do produto: R$");
+		Double valor = scanner.nextDouble();
+
+		Boolean freteGratis = valor >= 100.00;
+
+		if (!freteGratis) {
+			valor = valor + VALOR_FRETE;
+		}
+
+		System.out.println("Valor final da compra: R$" + valor);
+
+		scanner.close();
+	}
+}

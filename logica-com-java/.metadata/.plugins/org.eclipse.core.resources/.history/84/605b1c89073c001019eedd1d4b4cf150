@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Ex01_CalculadoraSimples {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("Digite o primeiro número: ");
+		Integer primeiroNumero = scanner.nextInt();
+		
+		System.out.print("Digite o segundo número: ");
+		Integer segundoNumero = scanner.nextInt();
+		
+		System.out.print("Qual será a operaçao? [1: adição | 2: subtração | 3: multiplicação | 4: divisão] ");
+		Integer operacao = scanner.nextInt();
+		
+		if (operacao == 1) {
+			Integer resultado = primeiroNumero + segundoNumero;
+			System.out.println("Resultado da operação: " + resultado);
+		} else if (operacao == 2) {
+			Integer resultado = primeiroNumero - segundoNumero;
+			System.out.println("Resultado da operação: " + resultado);
+		} else if (operacao == 3) {
+			Integer resultado = primeiroNumero * segundoNumero;
+			System.out.println("Resultado da operação: " + resultado);
+		} else if (operacao == 4) {
+			Integer resultado = primeiroNumero / segundoNumero;
+			System.out.println("Resultado da operação: " + resultado);
+		}
+	
+		scanner.close();
+	}
+}

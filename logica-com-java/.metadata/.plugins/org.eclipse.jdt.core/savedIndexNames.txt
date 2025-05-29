@@ -1,0 +1,9 @@
+INDEX VERSION 1.134+C:\Users\Jessi\Documents\dev\java-algaworks\java-algaworks-course\logica-com-java\.metadata\.plugins\org.eclipse.jdt.core
+128893142.index
+1231927090.index
+1057099049.index
+3931269007.index
+242724461.index
+1865797976.index
+2994100002.index
+1348490523.index
