@@ -1,0 +1,9 @@
+package ex03_dadospedido;
+
+public class Pedido {
+
+	Integer codigo;
+	Double subtotal;
+	Double desconto;
+	Double total;
+}

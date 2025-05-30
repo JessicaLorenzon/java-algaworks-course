@@ -1,0 +1,13 @@
+package ex01_reporestoque;
+
+public class Produto {
+
+	static final Integer QUANTIDADE_MINIMA = 10;
+	
+	String nome;
+	Integer quantidadeEstoque;
+	
+	public Boolean reposicaoNecessaria (Produto produto) {
+		return produto.quantidadeEstoque < QUANTIDADE_MINIMA;
+	}
+}
