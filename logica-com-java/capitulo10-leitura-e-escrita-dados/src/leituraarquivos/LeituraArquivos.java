@@ -16,7 +16,7 @@ public class LeituraArquivos {
 		for (int i = 0; i < linhas.size(); i++) {
 			String nome = linhas.get(i);
 
-			System.out.println("Jogador " + i + ": " + nome);
+			System.out.println("Jogador " + (i + 1) + ": " + nome);
 		}
 	}
 }
