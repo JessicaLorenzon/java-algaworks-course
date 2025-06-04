@@ -11,6 +11,11 @@ local.properties
 .loadpath
 .recommenders
 
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
 # External tool builders
 .externalToolBuilders/
 
@@ -68,6 +73,13 @@ local.properties
 # Compiled class file
 *.class
 
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
 # Log file
 *.log
 
@@ -89,3 +101,5 @@ local.properties
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+.idea
