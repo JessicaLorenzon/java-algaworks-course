@@ -2,6 +2,7 @@ package com.algaworks.algatransito.api.controller;
 
 import com.algaworks.algatransito.domain.model.Proprietario;
 import com.algaworks.algatransito.domain.repository.ProprietarioRepository;
+import com.algaworks.algatransito.domain.service.RegistroProprietarioService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,16 +15,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/proprietarios")
 public class ProprietarioController {
-    private final ProprietarioRepository proprietarioRepository;
 
-//    public ProprietarioController(ProprietarioRepository proprietarioRepository) {
-//        this.proprietarioRepository = proprietarioRepository;
-//    }
+    private final ProprietarioRepository proprietarioRepository;
+    private final RegistroProprietarioService registroProprietarioService;
 
     @GetMapping
     public List<Proprietario> listar() {
-//        return proprietarioRepository.findByNomeContaining("a");
-
         return proprietarioRepository.findAll();
     }
 
@@ -32,17 +29,12 @@ public class ProprietarioController {
         return proprietarioRepository.findById(proprietarioId)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
-
-//        if (proprietario.isPresent()) {
-//            return ResponseEntity.ok(proprietario.get());
-//        }
-//        return ResponseEntity.notFound().build();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Proprietario adicionar(@Valid @RequestBody Proprietario proprietario) {
-        return proprietarioRepository.save(proprietario);
+        return registroProprietarioService.salvar(proprietario);
     }
 
     @PutMapping("/{proprietarioId}")
@@ -52,7 +44,7 @@ public class ProprietarioController {
         }
 
         proprietario.setId(proprietarioId);
-        Proprietario proprietariaAtualizado = proprietarioRepository.save(proprietario);
+        Proprietario proprietariaAtualizado = registroProprietarioService.salvar(proprietario);
         return ResponseEntity.ok(proprietariaAtualizado);
     }
 
@@ -62,7 +54,7 @@ public class ProprietarioController {
             return ResponseEntity.notFound().build();
         }
 
-        proprietarioRepository.deleteById(proprietarioId);
+        registroProprietarioService.excluir(proprietarioId);
         return ResponseEntity.noContent().build();
     }
 }
